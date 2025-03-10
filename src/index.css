@@ -18,6 +18,12 @@ html {
 }
 
 body {
+  background: radial-gradient(
+      circle at top,
+      rgba(241, 210, 70, 0.98),
+      rgba(250, 176, 103, 0.87)
+    ),
+    url("https://q3jyt7-3000.csb.app/bg-pattern-dark.png");
   background-repeat: repeat;
   background-size: 100% 100%, 30% 30%, 100% 100%;
   min-height: 110rem;
