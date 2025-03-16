@@ -1,5 +1,7 @@
 # ReactJs Essential App
 
+![Tic Tac Toe Game](docs/screenshots/app.png)
+
 ## Purpose
 
 - Learning to two-way binding
