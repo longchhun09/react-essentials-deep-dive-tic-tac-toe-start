@@ -12,9 +12,22 @@ function derivedActivePlayer(gameTurns) {
   return currentPlayer;
 }
 
+const initialGameBoard = [
+  [null, null, null],
+  [null, null, null],
+  [null, null, null],
+];
+
 function App() {
   const [gameTurns, setGameTurns] = useState([]);
   const activePlayer = derivedActivePlayer(gameTurns);
+
+  let gameBoard = initialGameBoard;
+  for (const turn of gameTurns) {
+    const { square, player } = turn;
+    const { row, col } = square;
+    gameBoard[row][col] = player;
+  }
 
   function handleSelectSquare(rowIndex, colIndex) {
     setGameTurns((preTurns) => {
@@ -48,11 +61,7 @@ function App() {
               isActive={activePlayer === "O"}
             />
           </ol>
-          <GameBoard
-            onSelectSquare={handleSelectSquare}
-            activePlayerSymbol={activePlayer}
-            turns={gameTurns}
-          />
+          <GameBoard onSelectSquare={handleSelectSquare} board={gameBoard} />
         </div>
         <Log turns={gameTurns} />
       </main>
